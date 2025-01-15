@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados DICOM</title>
+  <link rel="stylesheet" href="{% static 'kerma_app/styles.css' %}">
+</head>
+<body>
+
+  {% include 'kerma_app/navbar.html' %}
+
+  <div class="container page-content">
+    <h2>RTSTRUCT encontrados</h2>
+    {% if rtstruct_list %}
+      {% for item in rtstruct_list %}
+        <div class="card">
+          <h3>Archivo RTSTRUCT</h3>
+          <p><strong>Ruta:</strong> {{ item.file }}</p>
+          <h4>Estructuras:</h4>
+          <ol>
+            {% for est in item.structures %}
+              <li>{{ est }}</li>
+            {% endfor %}
+          </ol>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="alert alert-warning">
+        No se encontraron RTSTRUCT en la carpeta.
+      </div>
+    {% endif %}
+
+    <hr>
+
+    <h2>RTDOSE encontrados</h2>
+    {% if rtdose_list %}
+      {% for dose_item in rtdose_list %}
+        <div class="card">
+          <h3>Archivo RTDOSE</h3>
+          <p><strong>Ruta:</strong> {{ dose_item.file }}</p>
+          <p><strong>Dosis Máxima:</strong> {{ dose_item.max_dose|floatformat:2 }} Gy</p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="alert alert-warning">
+        No se encontraron RTDOSE en la carpeta.
+      </div>
+    {% endif %}
+  </div>
+
+  <script src="{% static 'kerma_app/script.js' %}"></script>
+</body>
+</html>

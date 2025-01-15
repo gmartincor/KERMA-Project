@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --background-light: #f5f5f5;
+    --text-light: #333333;
+    --card-bg-light: #ffffff;
+    --link-color-light: #007bff;
+    --background-dark: #121212;
+    --text-dark: #e0e0e0;
+    --card-bg-dark: #2a2a2a;
+    --link-color-dark: #a78bfa;
+}
+
+.light-theme {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+.dark-theme {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #2C3E50;
+    margin: 0;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.nav-inner {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 2.1rem;
+}
+
+.site-title a {
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.theme-toggle {
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    background: none;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+}
+
+.spacer {
+    margin-bottom: 0.3rem;
+}
+
+.card {
+    background-color: var(--card-bg-light);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.spacer-dynalog {
+    margin-bottom: 1.3rem;
+}
+
+.dark-theme .card {
+    background-color: var(--card-bg-dark);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 0.5rem;
+}
+
+h2,
+h3,
+h4 {
+    margin-bottom: 1rem;
+}
+
+ol,
+ul {
+    margin: 0 0 1rem 1.5rem;
+    padding: 0;
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.page-content {
+    margin-top: 1rem;
+}

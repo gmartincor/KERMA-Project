@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados Dynalog:</title>
+  <link rel="stylesheet" href="{% static 'kerma_app/styles.css' %}">
+</head>
+<body>
+
+  {% include 'kerma_app/navbar.html' %}
+
+  <div class="container page-content">
+    {% if fileA and fileB %}
+      <div class="card">
+        <h3>Archivos Dynalog:</h3>
+        <ul>
+          <li class = "spacer-dynalog"><strong>Archivo A:</strong> {{ fileA }}</li>
+          <li><strong>Archivo B:</strong> {{ fileB }}</li>
+      </div>
+
+      {% if dims %}
+        <div class="card">
+          <h3>Cálculos de Fluencia</h3>
+          <ul>
+            <li class = "spacer"><strong>Dimensiones de fluencia acumulada:</strong> {{ dims }}</li>
+            <li class = "spacer"><strong>Suma de fluencia ACTUAL:</strong> {{ sum_actual|floatformat:3 }}</li>
+            <li class = "spacer"><strong>Suma de fluencia PLANIFICADA:</strong> {{ sum_expected|floatformat:3 }}</li>
+            <li class = "spacer"><strong>Error total (Actual - Planif):</strong> {{ error_total|floatformat:3 }}</li>
+            <li class = "spacer"><strong>Media de fluencia ACTUAL:</strong> {{ mean_actual|floatformat:3 }}</li>
+            <li class = "spacer"><strong>Media de fluencia PLANIFICADA:</strong> {{ mean_expected|floatformat:3 }}</li>
+            <li class = "spacer"><strong>Error medio:</strong> {{ mean_error|floatformat:3 }}</li>
+            <li class = "spacer"><strong>Error medio absoluto:</strong> {{ mean_abs_error|floatformat:3 }}</li>
+            <li><strong>Error porcentual relativo al plan:</strong> {{ error_percentage|floatformat:2 }} %</li>
+          </ul>
+        </div>
+      {% else %}
+        <div class="alert alert-warning">
+          No se pudieron calcular los valores de la fluencia. 
+          Es posible que los archivos estén vacíos o sean inválidos.
+        </div>
+      {% endif %}
+    {% else %}
+      <div class="alert alert-danger">
+        No se encontraron archivos Dynalog adecuados (A y B) en la carpeta dynalogs.
+      </div>
+    {% endif %}
+  </div>
+
+  <script src="{% static 'kerma_app/script.js' %}"></script>
+</body>
+</html>
