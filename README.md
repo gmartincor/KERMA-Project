@@ -1,10 +1,10 @@
-# KERMA Project
+# KERMA Demo-Project
 
-KERMA is a Django-based web application designed for analyzing radiation therapy data, specifically focused on processing DICOM files and Dynalog machine log files. The application provides a user-friendly interface to visualize and analyze radiation treatment planning and delivery data.
+KERMA-Demo is a Django-based web application designed for analyzing radiation therapy data, specifically focused on processing DICOM files and Dynalog machine log files. The application provides a user-friendly interface to visualize and analyze radiation treatment planning and delivery data.
 
 ## Overview
 
-The KERMA Project provides tools for:
+The KERMA-Demo Project provides tools for:
 
 - **DICOM Analysis**: Processing RTSTRUCT and RTDOSE files to extract radiation therapy structure information and dose distributions
 - **Dynalog Analysis**: Analyzing machine log files to compare actual vs. planned radiation delivery through fluence map calculations
